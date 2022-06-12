@@ -1,5 +1,9 @@
 // app.js
 const table1 = document.querySelector(".table1");
+const btnAll = document.querySelector(".btn-all");
+const btnHelp = document.querySelector(".btn-help");
+const btnGit = document.querySelector(".btn-git");
+const btnRecent = document.querySelector(".btn-recent");
 
 function fetchClass(callback){
     fetch('class.json')
@@ -10,8 +14,15 @@ function fetchClass(callback){
 }
 
 function callbackFunc(data){
-    const classData = data;
+    const classData = data
     console.log('classData',classData);
+
+    showAll(classData);
+    
+}
+
+
+function showAll(classData){
     let str = ""
     let count = 1;
     for (let i=0; i<classData.length; i++){
@@ -32,9 +43,7 @@ function callbackFunc(data){
 
         count++;
     }
-
     table1.innerHTML = str
 }
-
 
 fetchClass((data) => callbackFunc(data))
