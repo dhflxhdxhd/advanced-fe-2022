@@ -47,25 +47,46 @@
       "date": "2022-04-07"
     },
     {
-      "title": "http와 http 스크립팅",
+      "title": "퀴즈풀이(DragMe, 구구단, 버그잡기)",
       "docUrl": "https://start-fe.surge.sh/http/",
       "links": [],
       "gitUrl": "https://github.com/dhflxhdxhd/start-fe/07",
       "date": "2022-04-14"
     },
     {
-      "title": "오픈API",
+      "title": "중간고사",
+      "docUrl": "",
+      "links": [],
+      "gitUrl": "",
+      "date": "2022-04-21"
+    },
+    {
+      "title": "http와 http 스크립팅",
       "docUrl": "https://start-fe.surge.sh/ajax/",
       "links": [],
       "gitUrl": "https://github.com/dhflxhdxhd/start-fe/09",
       "date": "2022-04-28"
     },
     {
-      "title": "module",
+      "title": "휴강(어린이날)",
+      "docUrl": "",
+      "links": [],
+      "gitUrl": "",
+      "date": "2022-05-05"
+    },
+    {
+      "title": "오픈API",
       "docUrl": "https://start-fe.surge.sh/module/",
       "links": [],
       "gitUrl": "https://github.com/dhflxhdxhd/start-fe/11",
       "date": "2022-05-12"
+    },
+    {
+      "title": "module",
+      "docUrl": "https://start-fe.surge.sh/module/",
+      "links": [],
+      "gitUrl": "https://github.com/dhflxhdxhd/start-fe/12",
+      "date": "2022-05-19"
     },
     {
       "title": "Todo App",
@@ -73,5 +94,19 @@
       "links": [],
       "gitUrl": "https://github.com/dhflxhdxhd/start-fe/13",
       "date": "2021-05-26"
+    },
+    {
+      "title": "수업종료",
+      "docUrl": "",
+      "links": [],
+      "gitUrl": "",
+      "date": "2021-06-02"
+    },
+    {
+      "title": "기말고사",
+      "docUrl": "",
+      "links": [],
+      "gitUrl": "",
+      "date": "2021-06-16"
     }
 ]
