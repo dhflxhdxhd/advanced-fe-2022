@@ -38,9 +38,9 @@ function callbackFunc2(data){
 
 function showAll(classData){
     let str = ""
-    let count = 1;
+    
     for (let i=0; i<classData.length; i++){
-        str += `<tr><th scope="row">${count}</th>
+        str += `<tr><th scope="row">${i+1}</th>
         <td>${classData[i].title}</td>
         <td><a href="${classData[i].docUrl}" class="badge bg-secondary">문서</a></td>
         <td>`
@@ -55,7 +55,6 @@ function showAll(classData){
         <td>${classData[i].date}</td>
         <td><a href=${classData[i].gitUrl}>git</a></td><tr>`
 
-        count++;
     }
     table1.innerHTML = str
 }
@@ -63,12 +62,11 @@ function showAll(classData){
 // 주차 수정
 function showHelp(classData){
     let str = ""
-    let count = 1;
 
     console.log("showJJe")
     for (let i=0; i<classData.length; i++){
         if (classData[i].links.length > 0){
-            str += `<tr><th scope="row">${count}</th>
+            str += `<tr><th scope="row">${i+1}</th>
             <td>${classData[i].title}</td>
             <td><a href="${classData[i].docUrl}" class="badge bg-secondary">문서</a></td>
             <td>`
@@ -81,7 +79,6 @@ function showHelp(classData){
             <td>${classData[i].date}</td>
             <td><a href=${classData[i].gitUrl}>git</a></td><tr>`
     
-            count++;
         }
 
     }
@@ -91,12 +88,10 @@ function showHelp(classData){
 // 주차 수정
 function showGit(classData){
     let str = ""
-    let count = 1;
 
-    console.log("showJJe")
     for (let i=0; i<classData.length; i++){
         if (classData[i].gitUrl && classData[i].gitUrl !== ""){
-            str += `<tr><th scope="row">${count}</th>
+            str += `<tr><th scope="row">${i+1}</th>
             <td>${classData[i].title}</td>
             <td><a href="${classData[i].docUrl}" class="badge bg-secondary">문서</a></td>
             <td>`
@@ -108,8 +103,6 @@ function showGit(classData){
             str += `</td>
             <td>${classData[i].date}</td>
             <td><a href=${classData[i].gitUrl}>git</a></td><tr>`
-    
-            count++;
         }
 
     }
@@ -126,10 +119,28 @@ function date_recent(a,b){
 // 주차 수정
 function showRecent(classData){
     let str = ""
-    let count = 1;
+    let count = classData.length;
 
     console.log(classData.sort(date_recent));
-    showAll(classData)
+    for (let i=0; i<classData.length; i++){
+        str += `<tr><th scope="row">${count}</th>
+        <td>${classData[i].title}</td>
+        <td><a href="${classData[i].docUrl}" class="badge bg-secondary">문서</a></td>
+        <td>`
+        
+        if (classData[i].links.length >0){
+            for (let j=0; j<classData[i].links.length; j++){
+                str += `<a href="${classData[i].links[j]}" class="badge bg-secondary">${j+1}</a>`
+            }
+        }
+        
+        str += `</td>
+        <td>${classData[i].date}</td>
+        <td><a href=${classData[i].gitUrl}>git</a></td><tr>`
+
+        count--;
+    }
+    table1.innerHTML = str
 }
 
 function handleBtnAll(event){
