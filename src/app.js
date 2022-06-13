@@ -5,13 +5,17 @@ const btnHelp = document.querySelector(".btn-help");
 const btnGit = document.querySelector(".btn-git");
 const btnRecent = document.querySelector(".btn-recent");
 
+const quizSpinner = document.querySelector(".js-quizSpinner");
+const classSpinner = document.querySelector(".js-classSpinner");
 
 // 학습
 function fetchClass(callback){
+    classSpinner.style.display="block"
     fetch('class.json')
     .then((response) => response.json())
     .then((data) => {
         callback(data)
+        classSpinner.style.display="none"
 })
 }
 
@@ -181,10 +185,12 @@ const btnQuizAll = document.querySelector(".quiz-all");
 const btnQuizgit = document.querySelector(".quiz-git");
 
 function fetchQuiz(callback){
+    quizSpinner.style.display="block"
     fetch('quiz.json')
     .then((response) => response.json())
     .then((data) => {
         callback(data)
+        quizSpinner.style.display="none"
 })
 }
 
