@@ -1,23 +1,15 @@
 // app.js
+import {showClassLoading, hideClassLoading, showQuizLoading, hideQuizLoading, recentDate} from "./utils.js";
+
 const table1 = document.querySelector(".table1");
 const btnAll = document.querySelector(".btn-all");
 const btnHelp = document.querySelector(".btn-help");
 const btnGit = document.querySelector(".btn-git");
 const btnRecent = document.querySelector(".btn-recent");
 
-const quizSpinner = document.querySelector(".js-quizSpinner");
-const classSpinner = document.querySelector(".js-classSpinner");
+
 
 // 학습
-function showClassLoading(){
-    table1.style.display = "none"
-    classSpinner.style.display="block"
-}
-
-function hideClassLoading(){
-    classSpinner.style.display="none"
-    table1.style.display = "table-row-group"
-}
 
 function fetchClass(callback){
     showClassLoading();
@@ -25,7 +17,7 @@ function fetchClass(callback){
     fetch('class.json')
     .then((response) => response.json())
     .then((data) => {
-        setTimeout("hideClassLoading()",1000);
+        setTimeout(hideClassLoading,1000);
         callback(data)
 })
 }
@@ -120,19 +112,13 @@ function showGit(classData){
     table1.innerHTML = str
 }
 
-// 날짜 최신순(내림차순) 정렬
-function date_recent(a,b){
-    const dateA = new Date(a['date']).getTime();
-    const dateB = new Date(b['date']).getTime();
 
-    return dateA < dateB ? 1 : -1;
-}
 // 주차 수정
 function showRecent(classData){
     let str = ""
     let count = classData.length;
 
-    console.log(classData.sort(date_recent));
+    console.log(classData.sort(recentDate));
     for (let i=0; i<classData.length; i++){
         str += `<tr><th scope="row">${count}</th>
         <td>${classData[i].title}</td>
@@ -195,15 +181,7 @@ const table2 = document.querySelector(".table2");
 const btnQuizAll = document.querySelector(".quiz-all");
 const btnQuizgit = document.querySelector(".quiz-git");
 
-function showQuizLoading(){
-    table2.style.display = "none"
-    quizSpinner.style.display="block"
-}
 
-function hideQuizLoading(){
-    quizSpinner.style.display="none"
-    table2.style.display = "table-row-group"
-}
 
 function fetchQuiz(callback){
     showQuizLoading();
@@ -211,7 +189,7 @@ function fetchQuiz(callback){
     fetch('quiz.json')
     .then((response) => response.json())
     .then((data) => {
-        setTimeout("hideQuizLoading()", 1000)
+        setTimeout(hideQuizLoading, 1000)
         callback(data)
 })
 }
