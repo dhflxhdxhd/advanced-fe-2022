@@ -176,6 +176,7 @@ function handleBtnRecent(){
 }
 
 //퀴즈
+const table2 = document.querySelector(".table2");
 const btnQuizAll = document.querySelector(".quiz-all");
 const btnQuizgit = document.querySelector(".quiz-git");
 
@@ -190,39 +191,59 @@ function fetchQuiz(callback){
 function callbackFunc2(btn,data){
     const quizData = data;
     let checkBtn = btn;
+    console.log("quizData", quizData)
 
     if (checkBtn === "allQuiz"){
-
+        showQuizAll(quizData);
     }else if(checkBtn === "gitQuiz"){
-        
+        showQuizGit(quizData);
     }
 }
 
-function showQuizAll(){
+function showQuizAll(quizData){
+    let str = ""
+    
+    for (let i=0; i<quizData.length; i++){
+        str += `<tr><td>${quizData[i].title}</td>
+        <td><a href="${quizData[i].docUrl}" class="badge bg-secondary">문서</a></td>
+        <td><a href="${quizData[i].previewUrl}">보기</a></td>
+        <td><a href="${quizData[i].gitUrl}">git</a></td><tr>`
+    }
 
+    table2.innerHTML = str
 }
 
-function showQuizGit(){
+function showQuizGit(quizData){
+    let str = ""
 
+    for (let i=0; i<quizData.length; i++){
+        if (quizData[i].gitUrl && quizData[i].gitUrl !== ""){
+            str += `<tr><td>${quizData[i].title}</td>
+            <td><a href="${quizData[i].docUrl}" class="badge bg-secondary">문서</a></td>
+            <td><a href="${quizData[i].previewUrl}">보기</a></td>
+            <td><a href="${quizData[i].gitUrl}">git</a></td><tr>`
+        }
+    }
+    table2.innerHTML = str
 }
 
 function handleQuizAll(){
     btnQuizAll.classList.add("active");
     btnQuizgit.classList.remove("active");
 
-    showQuizAll();
+    fetchQuiz((data) => callbackFunc2("allQuiz",data));
 }
 
 function handleQuizGit(){
     btnQuizAll.classList.remove("active");
     btnQuizgit.classList.add("active");
 
-    showQuizGit();
+    fetchQuiz((data) => callbackFunc2("gitQuiz",data));
 }
 
 function init(){
     fetchClass((data) => callbackFunc("all",data));
-    fetchQuiz((data) => callbackFunc2("all",data));
+    fetchQuiz((data) => callbackFunc2("allQuiz",data));
 
     btnAll.addEventListener("click",handleBtnAll);
     btnHelp.addEventListener("click",handleBtnHelp);
