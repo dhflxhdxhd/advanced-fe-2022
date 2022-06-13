@@ -16,12 +16,12 @@
 
 
 /* 학습테이블 */
-.table1{
+.classTable{
   display:none ;
 }
 
 /* 퀴즈테이블 */
-.table2{
+.quizTable{
   display:none ;
 }
 

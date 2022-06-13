@@ -8,29 +8,29 @@ const recentDate = (a,b) => {
 }
 
 // 로딩 module
-const table1 = document.querySelector(".table1");
-const table2 = document.querySelector(".table2");
+const classTable = document.querySelector(".classTable");
+const quizTable = document.querySelector(".quizTable");
 const quizSpinner = document.querySelector(".js-quizSpinner");
 const classSpinner = document.querySelector(".js-classSpinner");
 
 const showClassLoading = () => {
-    table1.style.display = "none"
+    classTable.style.display = "none"
     classSpinner.style.display="block"
 }
 
 const hideClassLoading = () => {
     classSpinner.style.display="none"
-    table1.style.display = "table-row-group"
+    classTable.style.display = "table"
 }
 
 const showQuizLoading = () => {
-    table2.style.display = "none"
+    quizTable.style.display = "none"
     quizSpinner.style.display="block"
 }
 
 const hideQuizLoading = () => {
     quizSpinner.style.display="none"
-    table2.style.display = "table-row-group"
+    quizTable.style.display = "table"
 }
 
 
