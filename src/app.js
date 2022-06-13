@@ -9,13 +9,24 @@ const quizSpinner = document.querySelector(".js-quizSpinner");
 const classSpinner = document.querySelector(".js-classSpinner");
 
 // 학습
-function fetchClass(callback){
+function showClassLoading(){
+    table1.style.display = "none"
     classSpinner.style.display="block"
+}
+
+function hideClassLoading(){
+    classSpinner.style.display="none"
+    table1.style.display = "table-row-group"
+}
+
+function fetchClass(callback){
+    showClassLoading();
+
     fetch('class.json')
     .then((response) => response.json())
     .then((data) => {
+        setTimeout("hideClassLoading()",1000);
         callback(data)
-        classSpinner.style.display="none"
 })
 }
 
@@ -184,13 +195,24 @@ const table2 = document.querySelector(".table2");
 const btnQuizAll = document.querySelector(".quiz-all");
 const btnQuizgit = document.querySelector(".quiz-git");
 
-function fetchQuiz(callback){
+function showQuizLoading(){
+    table2.style.display = "none"
     quizSpinner.style.display="block"
+}
+
+function hideQuizLoading(){
+    quizSpinner.style.display="none"
+    table2.style.display = "table-row-group"
+}
+
+function fetchQuiz(callback){
+    showQuizLoading();
+    
     fetch('quiz.json')
     .then((response) => response.json())
     .then((data) => {
+        setTimeout("hideQuizLoading()", 1000)
         callback(data)
-        quizSpinner.style.display="none"
 })
 }
 

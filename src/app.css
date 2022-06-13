@@ -14,10 +14,21 @@
     justify-content: space-between;
   }
 
-.quizSpinner {
-  display: none;
+
+/* 학습 */
+.table1{
+  display:none ;
+}
+
+/* 퀴즈 */
+.table2{
+  display:none ;
 }
 
 .classSpinner {
+  display: none;
+}
+
+.quizSpinner {
   display: none;
 }
