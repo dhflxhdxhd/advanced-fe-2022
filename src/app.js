@@ -48,7 +48,7 @@ function showAll(classData){
         
         if (classData[i].links.length >0){
             for (let j=0; j<classData[i].links.length; j++){
-                str += `<a href="${classData[i].links[j]}" class="badge bg-secondary">${j+1}</a>`
+                str += `<a href="${classData[i].links[j]}" class="badge bg-secondary link">${j+1}</a>`
             }
         }
         
@@ -73,7 +73,7 @@ function showHelp(classData){
             <td>`
             
             for (let j=0; j<classData[i].links.length; j++){
-                str += `<a href="${classData[i].links[j]}" class="badge bg-secondary">${j+1}</a>`
+                str += `<a href="${classData[i].links[j]}" class="badge bg-secondary link">${j+1}</a>`
             }
             
             str += `</td>
@@ -98,7 +98,7 @@ function showGit(classData){
             <td>`
             
             for (let j=0; j<classData[i].links.length; j++){
-                str += `<a href="${classData[i].links[j]}" class="badge bg-secondary">${j+1}</a>`
+                str += `<a href="${classData[i].links[j]}" class="badge bg-secondary link">${j+1}</a>`
             }
             
             str += `</td>
@@ -125,7 +125,7 @@ function showRecent(classData){
         
         if (classData[i].links.length >0){
             for (let j=0; j<classData[i].links.length; j++){
-                str += `<a href="${classData[i].links[j]}" class="badge bg-secondary">${j+1}</a>`
+                str += `<a href="${classData[i].links[j]}" class="badge bg-secondary link">${j+1}</a>`
             }
         }
         
@@ -256,7 +256,7 @@ function init(){
     btnHelp.addEventListener("click",handleBtnHelp);
     btnGit.addEventListener("click",handleBtnGit);
     btnRecent.addEventListener("click",handleBtnRecent);
-    
+
     // 퀴즈리스트 필터 버튼
     btnQuizAll.addEventListener("click", handleQuizAll);
     btnQuizgit.addEventListener("click", handleQuizGit);
