@@ -1,5 +1,5 @@
 // utils.js
-// 날짜 최신순(내림차순) 정렬
+// 날짜 최신순(내림차순) 정렬 module
 const recentDate = (a,b) => {
     const dateA = new Date(a['date']).getTime();
     const dateB = new Date(b['date']).getTime();
@@ -7,7 +7,7 @@ const recentDate = (a,b) => {
     return dateA < dateB ? 1 : -1;
 }
 
-// 로딩
+// 로딩 module
 const table1 = document.querySelector(".table1");
 const table2 = document.querySelector(".table2");
 const quizSpinner = document.querySelector(".js-quizSpinner");

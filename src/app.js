@@ -8,9 +8,7 @@ const btnGit = document.querySelector(".btn-git");
 const btnRecent = document.querySelector(".btn-recent");
 
 
-
 // 학습
-
 function fetchClass(callback){
     showClassLoading();
 
@@ -21,7 +19,6 @@ function fetchClass(callback){
         callback(data)
 })
 }
-
 
 function callbackFunc(btn,data){
     const classData = data;
@@ -39,6 +36,7 @@ function callbackFunc(btn,data){
     }
 }
 
+// 학습리스트 필터 - 모두
 function showAll(classData){
     let str = ""
     
@@ -62,7 +60,7 @@ function showAll(classData){
     table1.innerHTML = str
 }
 
-// 주차 수정
+// 학습리스트 필터 - 도움링크
 function showHelp(classData){
     let str = ""
 
@@ -88,7 +86,7 @@ function showHelp(classData){
     table1.innerHTML = str
 }
 
-// 주차 수정
+// 학습리스트 필터 - git
 function showGit(classData){
     let str = ""
 
@@ -113,7 +111,7 @@ function showGit(classData){
 }
 
 
-// 주차 수정
+// 학습리스트 필터 - 최신순
 function showRecent(classData){
     let str = ""
     let count = classData.length;
@@ -139,6 +137,7 @@ function showRecent(classData){
     }
     table1.innerHTML = str
 }
+
 
 function handleBtnAll(event){
     btnAll.classList.add("active");
@@ -181,8 +180,6 @@ const table2 = document.querySelector(".table2");
 const btnQuizAll = document.querySelector(".quiz-all");
 const btnQuizgit = document.querySelector(".quiz-git");
 
-
-
 function fetchQuiz(callback){
     showQuizLoading();
     
@@ -206,6 +203,7 @@ function callbackFunc2(btn,data){
     }
 }
 
+// 퀴즈리스트 필터 - 모두
 function showQuizAll(quizData){
     let str = ""
     
@@ -219,6 +217,7 @@ function showQuizAll(quizData){
     table2.innerHTML = str
 }
 
+// 퀴즈리스트 필터 - git
 function showQuizGit(quizData){
     let str = ""
 
@@ -247,15 +246,18 @@ function handleQuizGit(){
     fetchQuiz((data) => callbackFunc2("gitQuiz",data));
 }
 
+// 초기 
 function init(){
     fetchClass((data) => callbackFunc("all",data));
     fetchQuiz((data) => callbackFunc2("allQuiz",data));
 
+    // 학습리스트 필터 버튼
     btnAll.addEventListener("click",handleBtnAll);
     btnHelp.addEventListener("click",handleBtnHelp);
     btnGit.addEventListener("click",handleBtnGit);
     btnRecent.addEventListener("click",handleBtnRecent);
-
+    
+    // 퀴즈리스트 필터 버튼
     btnQuizAll.addEventListener("click", handleQuizAll);
     btnQuizgit.addEventListener("click", handleQuizGit);
 }
