@@ -5,6 +5,8 @@ const btnHelp = document.querySelector(".btn-help");
 const btnGit = document.querySelector(".btn-git");
 const btnRecent = document.querySelector(".btn-recent");
 
+
+// 학습
 function fetchClass(callback){
     fetch('class.json')
     .then((response) => response.json())
@@ -12,6 +14,7 @@ function fetchClass(callback){
         callback(data)
 })
 }
+
 
 function callbackFunc(btn,data){
     const classData = data;
@@ -27,13 +30,6 @@ function callbackFunc(btn,data){
     } else {
         showRecent(classData);
     }
-}
-
-function callbackFunc2(data){
-    const classData = data
-    console.log('classData',classData);
-
-    showHelp(classData);  
 }
 
 function showAll(classData){
@@ -179,13 +175,62 @@ function handleBtnRecent(){
     fetchClass((data) => callbackFunc("recent",data))
 }
 
+//퀴즈
+const btnQuizAll = document.querySelector(".quiz-all");
+const btnQuizgit = document.querySelector(".quiz-git");
+
+function fetchQuiz(callback){
+    fetch('quiz.json')
+    .then((response) => response.json())
+    .then((data) => {
+        callback(data)
+})
+}
+
+function callbackFunc2(btn,data){
+    const quizData = data;
+    let checkBtn = btn;
+
+    if (checkBtn === "allQuiz"){
+
+    }else if(checkBtn === "gitQuiz"){
+        
+    }
+}
+
+function showQuizAll(){
+
+}
+
+function showQuizGit(){
+
+}
+
+function handleQuizAll(){
+    btnQuizAll.classList.add("active");
+    btnQuizgit.classList.remove("active");
+
+    showQuizAll();
+}
+
+function handleQuizGit(){
+    btnQuizAll.classList.remove("active");
+    btnQuizgit.classList.add("active");
+
+    showQuizGit();
+}
+
 function init(){
-    fetchClass((data) => callbackFunc("all",data))
+    fetchClass((data) => callbackFunc("all",data));
+    fetchQuiz((data) => callbackFunc2("all",data));
 
     btnAll.addEventListener("click",handleBtnAll);
     btnHelp.addEventListener("click",handleBtnHelp);
     btnGit.addEventListener("click",handleBtnGit);
     btnRecent.addEventListener("click",handleBtnRecent);
+
+    btnQuizAll.addEventListener("click", handleQuizAll);
+    btnQuizgit.addEventListener("click", handleQuizGit);
 }
 
 
