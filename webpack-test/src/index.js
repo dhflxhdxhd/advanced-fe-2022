@@ -13,7 +13,7 @@ const btnRecent = document.querySelector(".btn-recent");
 function fetchClass(callback){
     showClassLoading();
 
-    fetch('https://raw.githubusercontent.com/dhflxhdxhd/start-fe-2022/main/class.json?token=GHSAT0AAAAAABURYBGOJHO6L4CNXW7OPBO6YVII5RQ')
+    fetch('https://raw.githubusercontent.com/dhflxhdxhd/start-fe-2022/main/webpack-test/class.json?token=GHSAT0AAAAAABURYBGPZK2UZOLP4LPYXGGGYVIJVKQ')
     .then((response) => response.json())
     .then((data) => {
         setTimeout(hideClassLoading,1000);
@@ -184,7 +184,7 @@ const btnQuizgit = document.querySelector(".quiz-git");
 function fetchQuiz(callback){
     showQuizLoading();
     
-    fetch('https://raw.githubusercontent.com/dhflxhdxhd/start-fe-2022/main/quiz.json?token=GHSAT0AAAAAABURYBGPKYYGIKRKQXTCRWBEYVII5GA')
+    fetch('https://raw.githubusercontent.com/dhflxhdxhd/start-fe-2022/main/webpack-test/quiz.json?token=GHSAT0AAAAAABURYBGOY3VIAILPPHALRMGWYVIJWAA')
     .then((response) => response.json())
     .then((data) => {
         setTimeout(hideQuizLoading, 1000)
