@@ -1,5 +1,7 @@
 // app.js
+
 import {showClassLoading, hideClassLoading, showQuizLoading, hideQuizLoading, recentDate} from "./utils.js";
+
 
 const table1 = document.querySelector(".table1");
 const btnAll = document.querySelector(".btn-all");
@@ -8,11 +10,12 @@ const btnGit = document.querySelector(".btn-git");
 const btnRecent = document.querySelector(".btn-recent");
 
 
+
 // 학습
 function fetchClass(callback){
     showClassLoading();
 
-    fetch('class.json')
+    fetch('./class.json')
     .then((response) => response.json())
     .then((data) => {
         setTimeout(hideClassLoading,1000);
@@ -183,7 +186,7 @@ const btnQuizgit = document.querySelector(".quiz-git");
 function fetchQuiz(callback){
     showQuizLoading();
     
-    fetch('quiz.json')
+    fetch('./quiz.json')
     .then((response) => response.json())
     .then((data) => {
         setTimeout(hideQuizLoading, 1000)
