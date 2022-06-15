@@ -62,7 +62,7 @@ function showAll(classData){
         
         str += `</td>
         <td>${classData[i].date}</td>
-        <td><a href=${classData[i].gitUrl}>git</a></td><tr>`
+        <td><a href=${classData[i].gitUrl}>git</a></td></tr>`
 
     }
     table1.innerHTML = str
@@ -93,7 +93,7 @@ function showHelp(classData){
             
             str += `</td>
             <td>${classData[i].date}</td>
-            <td><a href=${classData[i].gitUrl}>git</a></td><tr>`
+            <td><a href=${classData[i].gitUrl}>git</a></td></tr>`
     
         }
 
@@ -126,7 +126,7 @@ function showGit(classData){
             
             str += `</td>
             <td>${classData[i].date}</td>
-            <td><a href=${classData[i].gitUrl}>git</a></td><tr>`
+            <td><a href=${classData[i].gitUrl}>git</a></td></tr>`
         }
 
     }
@@ -160,7 +160,7 @@ function showRecent(classData){
         
         str += `</td>
         <td>${classData[i].date}</td>
-        <td><a href=${classData[i].gitUrl}>git</a></td><tr>`
+        <td><a href=${classData[i].gitUrl}>git</a></td></tr>`
 
         count--;
     }
@@ -238,9 +238,20 @@ function showQuizAll(quizData){
     
     for (let i=0; i<quizData.length; i++){
         str += `<tr><td>${quizData[i].title}</td>
-        <td><a href="${quizData[i].docUrl}" class="badge bg-secondary">문서</a></td>
-        <td><a href="${quizData[i].previewUrl}">보기</a></td>
-        <td><a href="${quizData[i].gitUrl}">git</a></td><tr>`
+             <td><a href="${quizData[i].docUrl}" class="badge bg-secondary">문서</a></td>`
+        
+        if(!quizData[i].previewUrl || quizData[i].previewUrl.length == 0){
+            str += `<td></td>`
+        }else{
+            str += `<td><a href="${quizData[i].previewUrl}">보기</a></td>`
+        }
+
+       if(quizData[i].gitUrl && quizData[i].gitUrl !== "" ){
+         str +=  `<td><a href="${quizData[i].gitUrl}">git</a></td></tr>`
+       }else{
+        str+= `<td></td></tr>`
+       }
+        
     }
 
     table2.innerHTML = str
@@ -255,7 +266,7 @@ function showQuizGit(quizData){
             str += `<tr><td>${quizData[i].title}</td>
             <td><a href="${quizData[i].docUrl}" class="badge bg-secondary">문서</a></td>
             <td><a href="${quizData[i].previewUrl}">보기</a></td>
-            <td><a href="${quizData[i].gitUrl}">git</a></td><tr>`
+            <td><a href="${quizData[i].gitUrl}">git</a></td></tr>`
         }
     }
     table2.innerHTML = str
