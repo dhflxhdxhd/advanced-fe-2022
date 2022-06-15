@@ -46,4 +46,4 @@ $ npm start
   },
 ```
 
-### 과제 is here(https://github.com/advanced-webapps-class/classroom/blob/gh-pages/2022/test2)
+### 과제 is [here](https://github.com/advanced-webapps-class/classroom/blob/gh-pages/2022/test2)
