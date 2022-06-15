@@ -44,9 +44,15 @@ function showAll(classData){
     
     for (let i=0; i<classData.length; i++){
         str += `<tr><th scope="row">${i+1}</th>
-        <td>${classData[i].title}</td>
-        <td><a href="${classData[i].docUrl}" class="badge bg-secondary">문서</a></td>
-        <td>`
+        <td>${classData[i].title}</td>`
+
+        if(!classData[i].docUrl || classData[i].docUrl.length == 0){
+            str += `<td></td><td>`
+        }else{
+            str +=  `<td><a href="${classData[i].docUrl}" class="badge bg-secondary">문서</a></td>
+            <td>`
+        }
+       
         
         if (classData[i].links.length >0){
             for (let j=0; j<classData[i].links.length; j++){
@@ -66,16 +72,23 @@ function showAll(classData){
 function showHelp(classData){
     let str = ""
 
-    console.log("showJJe")
     for (let i=0; i<classData.length; i++){
         if (classData[i].links.length > 0){
             str += `<tr><th scope="row">${i+1}</th>
-            <td>${classData[i].title}</td>
-            <td><a href="${classData[i].docUrl}" class="badge bg-secondary">문서</a></td>
-            <td>`
+            <td>${classData[i].title}</td>`
+    
+            if(!classData[i].docUrl || classData[i].docUrl.length == 0){
+                str += `<td></td><td>`
+            }else{
+                str +=  `<td><a href="${classData[i].docUrl}" class="badge bg-secondary">문서</a></td>
+                <td>`
+            }
+           
             
-            for (let j=0; j<classData[i].links.length; j++){
-                str += `<a href="${classData[i].links[j]}" class="badge bg-secondary link">${j+1}</a>`
+            if (classData[i].links.length >0){
+                for (let j=0; j<classData[i].links.length; j++){
+                    str += `<a href="${classData[i].links[j]}" class="badge bg-secondary link">${j+1}</a>`
+                }
             }
             
             str += `</td>
@@ -95,12 +108,20 @@ function showGit(classData){
     for (let i=0; i<classData.length; i++){
         if (classData[i].gitUrl && classData[i].gitUrl !== ""){
             str += `<tr><th scope="row">${i+1}</th>
-            <td>${classData[i].title}</td>
-            <td><a href="${classData[i].docUrl}" class="badge bg-secondary">문서</a></td>
-            <td>`
+            <td>${classData[i].title}</td>`
+    
+            if(!classData[i].docUrl || classData[i].docUrl.length == 0){
+                str += `<td></td><td>`
+            }else{
+                str +=  `<td><a href="${classData[i].docUrl}" class="badge bg-secondary">문서</a></td>
+                <td>`
+            }
+           
             
-            for (let j=0; j<classData[i].links.length; j++){
-                str += `<a href="${classData[i].links[j]}" class="badge bg-secondary link">${j+1}</a>`
+            if (classData[i].links.length >0){
+                for (let j=0; j<classData[i].links.length; j++){
+                    str += `<a href="${classData[i].links[j]}" class="badge bg-secondary link">${j+1}</a>`
+                }
             }
             
             str += `</td>
@@ -121,9 +142,15 @@ function showRecent(classData){
     console.log(classData.sort(recentDate));
     for (let i=0; i<classData.length; i++){
         str += `<tr><th scope="row">${count}</th>
-        <td>${classData[i].title}</td>
-        <td><a href="${classData[i].docUrl}" class="badge bg-secondary">문서</a></td>
-        <td>`
+        <td>${classData[i].title}</td>`
+
+        if(!classData[i].docUrl || classData[i].docUrl.length == 0){
+            str += `<td></td><td>`
+        }else{
+            str +=  `<td><a href="${classData[i].docUrl}" class="badge bg-secondary">문서</a></td>
+            <td>`
+        }
+       
         
         if (classData[i].links.length >0){
             for (let j=0; j<classData[i].links.length; j++){
