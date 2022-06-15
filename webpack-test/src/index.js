@@ -61,8 +61,14 @@ function showAll(classData){
         }
         
         str += `</td>
-        <td>${classData[i].date}</td>
-        <td><a href=${classData[i].gitUrl}>git</a></td></tr>`
+        <td>${classData[i].date}</td>`
+
+        if(classData[i] && classData[i].gitUrl !== ""){
+            str += `<td><a href=${classData[i].gitUrl}>git</a></td></tr>`
+        }else {
+            str += `<td></td></tr>`
+        }
+        
 
     }
     table1.innerHTML = str
@@ -92,8 +98,14 @@ function showHelp(classData){
             }
             
             str += `</td>
-            <td>${classData[i].date}</td>
-            <td><a href=${classData[i].gitUrl}>git</a></td></tr>`
+            <td>${classData[i].date}</td>`
+
+            if(classData[i] && classData[i].gitUrl !== ""){
+                str += `<td><a href=${classData[i].gitUrl}>git</a></td></tr>`
+            }else {
+                str += `<td></td></tr>`
+            }
+            
     
         }
 
@@ -159,8 +171,13 @@ function showRecent(classData){
         }
         
         str += `</td>
-        <td>${classData[i].date}</td>
-        <td><a href=${classData[i].gitUrl}>git</a></td></tr>`
+        <td>${classData[i].date}</td>`
+
+        if(classData[i] && classData[i].gitUrl !== ""){
+            str += `<td><a href=${classData[i].gitUrl}>git</a></td></tr>`
+        }else {
+            str += `<td></td></tr>`
+        }
 
         count--;
     }
