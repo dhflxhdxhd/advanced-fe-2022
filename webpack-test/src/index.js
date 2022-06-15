@@ -7,13 +7,14 @@ const btnHelp = document.querySelector(".btn-help");
 const btnGit = document.querySelector(".btn-git");
 const btnRecent = document.querySelector(".btn-recent");
 
-
-
+const classUrl = new URL('./class.json', import.meta.url);
+const quizUrl = new URL('./quiz.json', import.meta.url);
+// console.log(classUrl.href);
 // 학습
 function fetchClass(callback){
     showClassLoading();
 
-    fetch('https://raw.githubusercontent.com/dhflxhdxhd/start-fe-2022/main/webpack-test/class.json?token=GHSAT0AAAAAABURYBGOYA2DY2HK3QIVP7AQYVIJX6A')
+    fetch(classUrl.href)
     .then((response) => response.json())
     .then((data) => {
         setTimeout(hideClassLoading,1000);
@@ -184,7 +185,7 @@ const btnQuizgit = document.querySelector(".quiz-git");
 function fetchQuiz(callback){
     showQuizLoading();
     
-    fetch('https://raw.githubusercontent.com/dhflxhdxhd/start-fe-2022/main/webpack-test/quiz.json?token=GHSAT0AAAAAABURYBGPXJVCYIPERJAMZCYUYVIJXRA')
+    fetch(quizUrl.href)
     .then((response) => response.json())
     .then((data) => {
         setTimeout(hideQuizLoading, 1000)
