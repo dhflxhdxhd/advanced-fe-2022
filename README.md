@@ -1,5 +1,5 @@
 # 프론트엔드 학습 내용 보여주는 서비스 
-start-fe-2022는 고급웹개발론 최종 결과물입니다. 
+start-fe-2022는 고급웹개발론에서 학습한 결과물들을 모아 하나의 페이지로 구성한 웹페이지입니다. 
 
 ## 실행방법
 ```
@@ -46,4 +46,8 @@ $ npm start
   },
 ```
 
-### 과제 is [here](https://github.com/advanced-webapps-class/classroom/blob/gh-pages/2022/test2)
+## 서비스 화면
+![화면1](./start-fe-2022(1).png)
+![화면2](./start-fe-2022(2).png)
+
+### [과제](https://github.com/advanced-webapps-class/classroom/blob/gh-pages/2022/test2)
