@@ -1,11 +1,11 @@
-# 프론트엔드 학습 내용 보여주는 서비스 
+# [프론트엔드 학습 내용 보여주는 서비스](https://github.com/advanced-webapps-class/classroom/blob/gh-pages/2022/test2)s 
 start-fe-2022는 고급웹개발론에서 학습한 결과물들을 모아 하나의 페이지로 구성한 웹페이지입니다. 
 
 ## 실행방법
 ```
 $ git clone https://github.com/dhflxhdxhd/start-fe-2022
 $ cd webpack-env
-$ npm install
+$ npm installs
 $ npm run build
 $ npm start
 ```
@@ -50,4 +50,3 @@ $ npm start
 ![화면1](./start-fe-2022(1).png)
 ![화면2](./start-fe-2022(2).png)
 
-### [과제](https://github.com/advanced-webapps-class/classroom/blob/gh-pages/2022/test2)
